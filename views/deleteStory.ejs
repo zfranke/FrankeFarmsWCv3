@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>News Story: Delete a Story</title>
+    </head>
+
+    <h1>News Story Service: View Story</h1>
+    <%if (userName == undefined) {%>
+    <a href="/login">Login</a>
+    <% } else {%>
+    <p>Welcome, <%= userName %>!</p>
+    <p>Your role is: <%= role %></p>
+    <a href="/logoutUser">Logout</a>
+    <%}%>
+
+    <br><br><br>
+
+    <body>
+        <h1>Result: <%= result %></h1>
+        <h2>Deleted Story: <%= title %></h2>
+        <a href="/">Return Home</a>
+    </body>
+</html>

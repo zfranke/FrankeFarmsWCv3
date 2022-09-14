@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Link Bootstrap 4-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<!DOCTYPE html>
+<html>
+<p></p>
+</html>
+
+<h1>News Story Service</h1>
+<h2>Create News Stories</h2>
+<p>Use the following input values to create a news story.</p>
+<div class="input-group mb-2">
+  <form action="/createNewsStory" method="POST">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input type="text" class="form-control" id="author" name="author">
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="text" class="form-control" id="date" name="date">
+    </div>
+    <div class="form-group">
+      <label for="public">Public:</label>
+      <select class="form-control" id="public" name="public">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Content:</span>
+      </div>
+      <textarea class="form-control" name="content" aria-label="Content"></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br><br>
+
+<h2>Update a News Story Title</h2>
+<p>Use the following input values to update a news story title.</p>
+<div class="input-group mb-2">
+  <form action="/updateNewsTitle" method="POST">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="titleChange" name="title">
+    </div>
+    <div class="form-group">
+      <label for="newTitle">New Title:</label>
+      <input type="text" class="form-control" id="newTitle" name="newTitle">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br><br>
+
+<h2>Update a News Story Content</h2>
+<p>Use the following input values to update a news story content.</p>
+<div class="input-group mb-2">
+  <form action="/updateNewsContent" method="POST">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="titleContentUpdate" name="title">
+    </div>
+    <div class="form-group">
+      <label for="newContent">New Content:</label>
+      <input type="text" class="form-control" id="newContent" name="newContent">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br><br>
+
+<h2>Delete a News Story</h2>
+<p>Use the following input values to delete a news story.</p>
+<div class="input-group mb-2">
+  <form action="/deleteNewsStory" method="POST">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="titleDelete" name="title">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br><br>
+
+<h2>Get a News Story</h2>
+<p>Use the following input values to get a news story with filterType as a dropdown option (title, author, date) and a filterValue.</p>
+<div class="input-group mb-2">
+  <form action="/getNewsStories" method="GET">
+    <div class="form-group">
+      <label for="filterType">Filter Type:</label>
+      <select class="form-control" id="filterType" name="filterType">
+        <option value="TITLE">Title</option>
+        <option value="AUTHOR">Author</option>
+        <option value="DATE">Date</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="filterValue">Filter Value:</label>
+      <input type="text" class="form-control" id="filterValue" name="filterValue">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</html>

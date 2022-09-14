@@ -1,0 +1,28 @@
+{
+  "name": "frankefarmswcv3",
+  "version": "1.0.0",
+  "description": "To store and monitor wines",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfranke/FrankeFarmsWCv3.git"
+  },
+  "author": "Zach Franke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zfranke/FrankeFarmsWCv3/issues"
+  },
+  "homepage": "https://github.com/zfranke/FrankeFarmsWCv3#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "json": "^11.0.0",
+    "pug": "^3.0.2"
+  }
+}

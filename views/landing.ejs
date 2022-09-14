@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>News Story Service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<!--Link the login page if the user is not signed in, if the user is signed in, display their name and role-->
+
+<body>
+    <h1>News Story Service</h1>
+    <%if (userName == undefined) {%>
+    <a href="/login">Login</a>
+    <% } else {%>
+    <p>Welcome, <%= userName %>!</p>
+    <p>Your role is: <%= role %></p>
+    <!--link to logout-->
+    <a href="/logoutUser">Logout</a>
+    <%}%>
+
+    
+    <br><br>
+    <!-- Reporter Dashboard-->
+    <%if(role == "Reporter") {%>
+    <h2>Reporter Dashboard</h2>
+    <a href="/createNewsStoryForm">Create News Story</a>
+    <br><br>
+    <%}%>
+
+
+    <!--List out all news stories and a link to view them-->
+    <h2>News Stories</h2>
+    <ul>
+        <%if (role == "Subscriber") {%>
+    <%for (var i = 0; i < newsStories.length; i++) {%>
+    <li><a href="/getNewsStories/?filterType=TITLE&filterValue=<%= newsStories[i].TITLE %>"><%= newsStories[i].TITLE %></a></li>
+    <%}%>
+    <% } else if (role == "Reporter"){%>
+    <%for (var i = 0; i < newsStories.length; i++) {%>
+    <li><a href="/getNewsStories/?filterType=TITLE&filterValue=<%= newsStories[i].TITLE %>"><%= newsStories[i].TITLE %></a> 
+        <a href="/deleteNewsStory/?title=<%= newsStories[i].TITLE %>"> | Delete</a></li>
+    <%}%>
+    <%} else {%>
+
+    <%for(var i = 0; i < newsStories.length; i++) {%>
+    <%if (newsStories[i].PUBLIC == "T") {%>
+    <li><a href="/getNewsStories/?filterType=TITLE&filterValue=<%= newsStories[i].TITLE %>"><%= newsStories[i].TITLE %></a></li>
+    <%}%> 
+        <%}%>
+    <%}%>
+    </ul>
+    <br><br>
+
+    <!--Module where if a user is active, scan the usersAction.txt for their username and report each line that has their user in it-->
+    <% if(role == "Reporter"|| role == "Subscriber") {%>
+    <h2>Your Recent Actions</h2>
+    <ul>
+        <li><%= usersActions %></li>
+        
+    </ul>
+    <br><br>
+    <%}%>
+
+    
+
+</body>
+
+</html>
