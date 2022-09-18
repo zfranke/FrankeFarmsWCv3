@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SOAP Program</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import bootstrap 5-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <!--Import Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!--Import Font Awesome-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!--Import my CSS serverStyles-->
+
+</head>
+
+<body>
+    <h2>Soap Program</h2>
+    <p>
+        <h3>Add a SOAP</h3>
+        <form action="/soapCreate" method="post">
+            <table border=1 cols=2>
+                <tr>
+                    <th>Element</th>
+                    <th>Field Name</th>
+                    <th>Field Value</th>
+                </tr>
+                <tr>
+                    <td rowspan="3">S</td>
+                    <td>Book</td>
+                    <td>
+                        <input type="text" name="book">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chapter</td>
+                    <td><input type="text" name="chapter"></td>
+                </tr>
+                <tr>
+                    <td>Verse</td>
+                    <td><input type="text" name="verse"></td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>Observation</td>
+                    <td><textarea id="observation" name="observation" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Application</td>
+                    <td><textarea id="application" name="application" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>Prayer</td>
+                    <td><textarea id="prayer" name="prayer" rows="4" cols="50"></textarea></td>
+                </tr>
+            </table>
+            <input type="submit" value="Add">
+        </form>
+    </p>
+    <p>
+        <h3>Search for a SOAP</h3>
+        <form action="/search" method="get">
+            <table border=1 cols=2>
+                <tr>
+                    <th>Field Name</th>
+                    <th>Field Value</th>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td><input type="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td>Book</td>
+                    <td><input type="text" name="book"></td>
+                </tr>
+                <tr>
+                    <td>Chapter</td>
+                    <td><input type="text" name="chapter"></td>
+                </tr>
+                <tr>
+                    <td>Verse</td>
+                    <td><input type="text" name="verse"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Search">
+        </form>
+    </p>
+</body>
+
+</html>

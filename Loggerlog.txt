@@ -1,0 +1,4 @@
+2022-9-15 21:18:28: Program Started
+2022-9-15 21:18:36: Program Started
+2022-9-15 21:18:54: Program Started
+2022-9-15 21:19:52: Program Started
